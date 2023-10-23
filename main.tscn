@@ -24,7 +24,6 @@ offset_top = -10.0
 offset_right = 30.0
 offset_bottom = 30.0
 scale = Vector2(0.498125, 0.497414)
-color = Color(0.701961, 1, 1, 0.784314)
 
 [node name="Player2" type="CharacterBody2D" parent="."]
 position = Vector2(315, 98)
@@ -40,6 +39,7 @@ offset_top = -10.0
 offset_right = 30.0
 offset_bottom = 30.0
 scale = Vector2(0.498125, 0.497414)
+color = Color(0.701961, 1, 1, 0.721569)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -53,21 +53,6 @@ offset_left = -14.0
 offset_top = 621.0
 offset_right = 26.0
 offset_bottom = 661.0
-scale = Vector2(29.4213, 1)
-color = Color(1, 1, 0.768627, 1)
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(574.775, 641)
-scale = Vector2(9.74492, 1.91556)
-shape = SubResource("RectangleShape2D_nf7rb")
-
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
-offset_left = 1101.0
-offset_top = 135.0
-offset_right = 1103.0
-offset_bottom = 622.0
 scale = Vector2(29.4213, 1)
 color = Color(1, 1, 0.768627, 1)
 
