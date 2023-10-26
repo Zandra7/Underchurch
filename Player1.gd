@@ -3,8 +3,12 @@ extends CharacterBody2D
  
 
 const SPEED = 300.0
-const AIR_SPEED = 2
+const AIR_SPEED = 700
 const JUMP_VELOCITY = -500.0
+
+const WALL_JUMP_DISTANCE = -250
+const WALL_JUMP_HEIGHT = -600
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var Direction = "Right"
 var jumpDelay = false
@@ -31,12 +35,12 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		elif is_on_wall() and whichWall == "right":
-			velocity.y = JUMP_VELOCITY - 200
-			velocity.x = JUMP_VELOCITY - AIR_SPEED
+			velocity.y = WALL_JUMP_HEIGHT
+			velocity.x = WALL_JUMP_DISTANCE
 			jumpDelay = true
 		elif is_on_wall() and whichWall == "left":
-			velocity.y = JUMP_VELOCITY - 200
-			velocity.x = JUMP_VELOCITY *-1 + AIR_SPEED
+			velocity.y = WALL_JUMP_HEIGHT
+			velocity.x = WALL_JUMP_DISTANCE *-1
 			jumpDelay = true
 
 	if is_on_floor():
