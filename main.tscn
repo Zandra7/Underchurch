@@ -75,11 +75,3 @@ position = Vector2(107, -503)
 
 [node name="Wall3" parent="." instance=ExtResource("3_xpw7e")]
 position = Vector2(1464, -756)
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1.0
-offset_top = 1509.0
-offset_right = 42.0
-offset_bottom = 1537.0
-scale = Vector2(74.1347, 1.90175)
-color = Color(0, 0, 0, 1)
