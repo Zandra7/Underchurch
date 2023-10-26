@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://6el17cg5k2hv"]
+[gd_scene load_steps=6 format=3 uid="uid://6el17cg5k2hv"]
 
 [ext_resource type="Script" path="res://Player1.gd" id="1_1stsa"]
 [ext_resource type="Script" path="res://Player2.gd" id="2_oab2t"]
+[ext_resource type="PackedScene" path="res://wall.tscn" id="3_xpw7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa5ok"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nf7rb"]
-size = Vector2(120.519, 20)
+size = Vector2(305.082, 20)
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,7 +25,15 @@ offset_top = -10.0
 offset_right = 30.0
 offset_bottom = 30.0
 scale = Vector2(0.498125, 0.497414)
-color = Color(0.701961, 1, 1, 0.784314)
+
+[node name="Camera2D" type="Camera2D" parent="Player1"]
+
+[node name="RayCastRight" type="RayCast2D" parent="Player1"]
+target_position = Vector2(24, 0.6)
+collide_with_areas = true
+
+[node name="RayCastLeft" type="RayCast2D" parent="Player1"]
+target_position = Vector2(-16, 2.08165e-12)
 
 [node name="Player2" type="CharacterBody2D" parent="."]
 position = Vector2(315, 98)
@@ -40,26 +49,27 @@ offset_top = -10.0
 offset_right = 30.0
 offset_bottom = 30.0
 scale = Vector2(0.498125, 0.497414)
+color = Color(0.701961, 1, 1, 0.721569)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(574.775, 641)
+position = Vector2(-324.501, 641)
 scale = Vector2(9.74492, 1.91556)
 shape = SubResource("RectangleShape2D_nf7rb")
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
-offset_left = -14.0
+offset_left = -1788.0
 offset_top = 621.0
-offset_right = 26.0
+offset_right = -1688.0
 offset_bottom = 661.0
 scale = Vector2(29.4213, 1)
 color = Color(1, 1, 0.768627, 1)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1.0
-offset_top = 1509.0
-offset_right = 42.0
-offset_bottom = 1537.0
-scale = Vector2(74.1347, 1.90175)
-color = Color(0, 0, 0, 1)
+[node name="Wall" parent="." instance=ExtResource("3_xpw7e")]
+
+[node name="Wall2" parent="." instance=ExtResource("3_xpw7e")]
+position = Vector2(107, -503)
+
+[node name="Wall3" parent="." instance=ExtResource("3_xpw7e")]
+position = Vector2(1464, -756)
