@@ -33,20 +33,16 @@ func _physics_process(delta):
 		elif is_on_wall() and whichWall == "right":
 			velocity.y = JUMP_VELOCITY - 200
 			velocity.x = JUMP_VELOCITY - AIR_SPEED
-			$Timer.start()
 			jumpDelay = true
-			await $Timer.timeout
 			print("RIGHT")
-			jumpDelay = false
 		elif is_on_wall() and whichWall == "left":
 			velocity.y = JUMP_VELOCITY - 200
 			velocity.x = JUMP_VELOCITY *-1 + AIR_SPEED
-			$Timer.start()
 			jumpDelay = true
-			await $Timer.timeout
 			print("LEFT")
-			jumpDelay = false
 
+		if is_on_floor():
+			jumpDelay = false
 	
 	var direction = Input.get_axis("p1left", "p1right")
 	if	jumpDelay == false:

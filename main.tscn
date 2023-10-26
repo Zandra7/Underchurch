@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player1.gd" id="1_1stsa"]
 [ext_resource type="Script" path="res://Player2.gd" id="2_oab2t"]
-[ext_resource type="PackedScene" uid="uid://cxr8tok5ewmhe" path="res://wall.tscn" id="3_xpw7e"]
+[ext_resource type="PackedScene" path="res://wall.tscn" id="3_xpw7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa5ok"]
 
@@ -27,8 +27,6 @@ offset_bottom = 30.0
 scale = Vector2(0.498125, 0.497414)
 
 [node name="Camera2D" type="Camera2D" parent="Player1"]
-
-[node name="Timer" type="Timer" parent="Player1"]
 
 [node name="RayCastRight" type="RayCast2D" parent="Player1"]
 target_position = Vector2(24, 0.6)
