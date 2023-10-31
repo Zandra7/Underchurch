@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa5ok"]
 
 [node name="Player1" type="CharacterBody2D"]
-position = Vector2(665, 91)
+position = Vector2(577, 325)
 scale = Vector2(5, 5)
 script = ExtResource("1_ykjrc")
 
