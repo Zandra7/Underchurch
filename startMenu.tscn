@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cf0ja0ki0ck8r"]
+[gd_scene load_steps=6 format=3 uid="uid://dqj136hca4w2l"]
 
 [ext_resource type="Script" path="res://StartButton.gd" id="1_1liyt"]
 [ext_resource type="Script" path="res://QuitButton.gd" id="2_mlpol"]
-[ext_resource type="AudioStream" uid="uid://cqik0rkltci0b" path="res://Title Screen OST.mp3" id="4_7vehs"]
+[ext_resource type="AudioStream" path="res://Title Screen OST.mp3" id="4_7vehs"]
 
 [sub_resource type="Theme" id="Theme_2pqgj"]
 Button/colors/font_color = Color(1, 1, 1, 1)
