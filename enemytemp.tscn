@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://be5fqn16n42q3"]
+
+[ext_resource type="PackedScene" uid="uid://bq537c3skf4i1" path="res://player_1.tscn" id="1_flfb8"]
+[ext_resource type="PackedScene" uid="uid://2l7ivk5jjm55" path="res://enemy.tscn" id="2_o0erq"]
+[ext_resource type="PackedScene" uid="uid://ddleednlnlg2" path="res://player_2.tscn" id="3_a2den"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bllm4"]
+size = Vector2(57.5104, 48)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player1" parent="." instance=ExtResource("1_flfb8")]
+position = Vector2(698, 320)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(288, 614)
+scale = Vector2(28.76, 1)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = -10.0
+offset_top = -12.0
+offset_right = -8.0
+offset_bottom = 38.0
+scale = Vector2(28.76, 1)
+color = Color(0.960784, 1, 0.584314, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(18.7413, 12)
+shape = SubResource("RectangleShape2D_bllm4")
+
+[node name="Enemy" parent="." instance=ExtResource("2_o0erq")]
+position = Vector2(268, 489)
+
+[node name="Player2" parent="." instance=ExtResource("3_a2den")]
+position = Vector2(976, 304)
