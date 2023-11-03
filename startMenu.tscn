@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqj136hca4w2l"]
+[gd_scene load_steps=8 format=3 uid="uid://glg3yx5rytd3"]
 
 [ext_resource type="Script" path="res://StartButton.gd" id="1_1liyt"]
 [ext_resource type="Script" path="res://QuitButton.gd" id="2_mlpol"]
 [ext_resource type="FontFile" uid="uid://cipfm0g6dvp0a" path="res://masonsans.ttf" id="2_nt25h"]
-[ext_resource type="AudioStream" path="res://Title Screen OST.mp3" id="4_7vehs"]
+[ext_resource type="AudioStream" uid="uid://cqik0rkltci0b" path="res://Title Screen OST.mp3" id="4_7vehs"]
 
 [sub_resource type="Theme" id="Theme_2pqgj"]
 default_font = ExtResource("2_nt25h")
