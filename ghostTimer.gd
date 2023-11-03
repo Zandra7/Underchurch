@@ -12,9 +12,13 @@ func _ready():
 func _process(delta):
 	if value > 60:
 		value = 60
+		
+	if value == 0: 
+		get_tree().change_scene_to_file("res://startMenu.tscn")
 
 func _on_timer_timeout():
 	Global.timerValue -= 1
 	value = Global.timerValue
 	print(value)
+	
 	

@@ -8,11 +8,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-
 	if Global.health == 2 and $Heart3:
 		$Heart3.queue_free()
 	elif Global.health == 1 and $Heart2:
 		$Heart2.queue_free()
 	elif Global.health == 0 and $Heart1:
 		$Heart1.queue_free()
+		get_tree().change_scene_to_file("res://startMenu.tscn")
+		
+		
 	
