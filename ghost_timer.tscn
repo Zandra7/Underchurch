@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cufulryaxkwp0"]
+[gd_scene load_steps=4 format=3 uid="uid://03n0bcb6icgc"]
 
-[ext_resource type="Texture2D" uid="uid://lb5g5eshdawn" path="res://empty-bar.png" id="1_twhda"]
-[ext_resource type="Texture2D" uid="uid://8c2u512w3iai" path="res://full-bar.png" id="2_ulh3w"]
+[ext_resource type="Texture2D" path="res://empty-bar.png" id="1_twhda"]
+[ext_resource type="Texture2D" path="res://full-bar.png" id="2_ulh3w"]
 [ext_resource type="Script" path="res://ghostTimer.gd" id="3_or2bb"]
 
 [node name="Control" type="Control"]
