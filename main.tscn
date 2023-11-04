@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://6el17cg5k2hv"]
+[gd_scene load_steps=8 format=3 uid="uid://6el17cg5k2hv"]
 
 [ext_resource type="PackedScene" uid="uid://dql6a5rsys0yd" path="res://player_1.tscn" id="1_0d2bf"]
-[ext_resource type="PackedScene" uid="uid://co1jqsa480pu0" path="res://player_2.tscn" id="2_vdqjs"]
+[ext_resource type="Script" path="res://main.gd" id="1_0yjsx"]
+[ext_resource type="PackedScene" uid="uid://c2j7tgddp1br5" path="res://player_2.tscn" id="2_vdqjs"]
 [ext_resource type="PackedScene" uid="uid://cxr8tok5ewmhe" path="res://wall.tscn" id="3_xpw7e"]
-[ext_resource type="PackedScene" path="res://enemy.tscn" id="4_coljf"]
+[ext_resource type="PackedScene" uid="uid://2l7ivk5jjm55" path="res://enemy.tscn" id="4_coljf"]
+[ext_resource type="PackedScene" uid="uid://os8kfkh0t71o" path="res://camera.tscn" id="6_c744o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nf7rb"]
 size = Vector2(305.082, 20)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_0yjsx")
 
 [node name="Player1" parent="." instance=ExtResource("1_0d2bf")]
 
@@ -39,3 +42,6 @@ position = Vector2(1527, -845)
 
 [node name="Enemy" parent="." instance=ExtResource("4_coljf")]
 position = Vector2(-491, 567)
+
+[node name="Camera2D" parent="." instance=ExtResource("6_c744o")]
+position = Vector2(300, 299)

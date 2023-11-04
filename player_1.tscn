@@ -19,8 +19,6 @@ offset_right = 30.0
 offset_bottom = 30.0
 scale = Vector2(0.498125, 0.497414)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="RayCastRight" type="RayCast2D" parent="."]
 target_position = Vector2(24, 0.6)
 collide_with_areas = true
