@@ -5,13 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://ccywo6ipamfix" path="res://kriger_jump.png" id="3_3e085"]
 [ext_resource type="Texture2D" uid="uid://ihtv0tho00vc" path="res://kriger_walk.png" id="3_qtpaq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_416qo"]
-atlas = ExtResource("3_3e085")
-region = Rect2(310, 0, 310, 590)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnhio"]
 atlas = ExtResource("2_ga5y7")
 region = Rect2(0, 0, 317, 590)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_416qo"]
+atlas = ExtResource("3_3e085")
+region = Rect2(310, 0, 310, 590)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wtdlm"]
 atlas = ExtResource("3_3e085")
@@ -33,19 +33,19 @@ region = Rect2(0, 0, 315, 590)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_416qo")
-}],
-"loop": true,
-"name": &"fall",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_pnhio")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_416qo")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -55,7 +55,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_mi1fd")
 }],
 "loop": true,
-"name": &"jump",
+"name": &"jumpmaybe",
 "speed": 2.0
 }, {
 "frames": [{
@@ -82,7 +82,7 @@ script = ExtResource("1_ykjrc")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.0639996, 0.0639996)
 sprite_frames = SubResource("SpriteFrames_rf50i")
-animation = &"fall"
+animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.712424, 1.49997)

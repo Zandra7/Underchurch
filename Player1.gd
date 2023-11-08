@@ -10,10 +10,14 @@ const WALL_JUMP_DISTANCE = -250
 const WALL_JUMP_HEIGHT = -600
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var anim
+
 var Direction = "Right"
 var jumpDelay = false
 var whichWall = ""
 
+func _ready():
+	anim = $AnimatedSprite2D
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -34,6 +38,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("p1jump"):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			anim.play("jump")
 		elif is_on_wall() and whichWall == "right":
 			velocity.y = WALL_JUMP_HEIGHT
 			velocity.x = WALL_JUMP_DISTANCE
@@ -50,11 +55,19 @@ func _physics_process(delta):
 	if	jumpDelay == false:
 		if direction:
 			velocity.x = direction * SPEED
+			if Input.is_action_just_pressed("p1left"):
+				anim.flip_h = false
+				anim.play("walk")
+			elif Input.is_action_just_pressed("p1right"):
+				anim.flip_h = true
+				anim.play("walk")
 		elif is_on_floor():
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		else:
 			velocity.x = move_toward(velocity.x, 0, AIR_SPEED)
 
+	if is_on_floor() and !direction:
+		anim.play("idle")
 
 	move_and_slide()
 
