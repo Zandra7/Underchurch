@@ -17,8 +17,7 @@ var fireballReady = true
 var direction = Vector2.ZERO
 
 func _ready():
-	pass
-#	anim = $AnimatedSprite2D
+	anim = $AnimatedSprite2D
 	timer = $Timer
 
 func _physics_process(delta):
@@ -36,6 +35,12 @@ func _physics_process(delta):
 	direction = Vector2(Input.get_axis("p2left", "p2right"), 0)
 	if direction:
 		velocity.x = direction.x * SPEED
+		if Input.is_action_just_pressed("p2left"):
+			anim.flip_h = true
+			anim.play("walk")
+		elif Input.is_action_just_pressed("p2right"):
+			anim.flip_h = false
+			anim.play("walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
