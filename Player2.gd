@@ -57,6 +57,9 @@ func _physics_process(delta):
 		fireballReady = false
 		timer.start()
 
+	if is_on_floor() and !direction:
+		anim.play("idle")
+
 	move_and_slide()
 
 
