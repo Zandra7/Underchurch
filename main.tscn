@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://6el17cg5k2hv"]
+[gd_scene load_steps=13 format=3 uid="uid://6el17cg5k2hv"]
 
 [ext_resource type="PackedScene" uid="uid://dql6a5rsys0yd" path="res://player_1.tscn" id="1_0d2bf"]
 [ext_resource type="Script" path="res://main.gd" id="1_0yjsx"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://2l7ivk5jjm55" path="res://enemy.tscn" id="4_coljf"]
 [ext_resource type="PackedScene" uid="uid://os8kfkh0t71o" path="res://camera.tscn" id="6_c744o"]
 [ext_resource type="Texture2D" uid="uid://bgvhwtgsjcfax" path="res://checkpoint_portal_product.png" id="8_8wljo"]
+[ext_resource type="PackedScene" uid="uid://03n0bcb6icgc" path="res://ghost_timer.tscn" id="9_n4sds"]
+[ext_resource type="PackedScene" uid="uid://co3ru8poafeja" path="res://health.tscn" id="10_01vst"]
+[ext_resource type="PackedScene" uid="uid://byto6rhcswh8r" path="res://ghost_orbs.tscn" id="11_oq0aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw3m6"]
 size = Vector2(932, 20)
@@ -23,8 +26,8 @@ texture = ExtResource("2_g2ftn")
 
 [node name="KirkeVegg2" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(929, 15)
-scale = Vector2(1.11282, 1.11282)
+position = Vector2(926.136, 15)
+scale = Vector2(1.11966, 1.11282)
 texture = ExtResource("2_g2ftn")
 
 [node name="NedreVegg1" type="StaticBody2D" parent="."]
@@ -106,3 +109,32 @@ position = Vector2(678, 476)
 
 [node name="Camera2D" parent="." instance=ExtResource("6_c744o")]
 position = Vector2(300, 299)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="health" parent="CanvasLayer" instance=ExtResource("10_01vst")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = -97.0
+offset_right = 34.0
+offset_bottom = -97.0
+grow_vertical = 0
+
+[node name="GhostTimer" parent="CanvasLayer" instance=ExtResource("9_n4sds")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = -110.0
+offset_top = 59.0
+offset_right = -110.0
+offset_bottom = 59.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ghost_orbs" parent="." instance=ExtResource("11_oq0aa")]
+position = Vector2(436, 416)
+
+[node name="ghost_orbs2" parent="." instance=ExtResource("11_oq0aa")]
+position = Vector2(287, 420)
