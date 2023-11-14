@@ -1,6 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://6el17cg5k2hv"]
 
 [ext_resource type="PackedScene" uid="uid://dql6a5rsys0yd" path="res://player_1.tscn" id="1_0d2bf"]
+
 [ext_resource type="Script" path="res://main.gd" id="1_0yjsx"]
 [ext_resource type="Texture2D" uid="uid://cvjgy2ot6sj2c" path="res://KirkeVegg.png" id="2_g2ftn"]
 [ext_resource type="Texture2D" uid="uid://tg5udst8721x" path="res://kirkeTak.png" id="2_rge8t"]
