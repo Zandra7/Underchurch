@@ -1,23 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://wlcbrxdcvq85"]
+[gd_scene load_steps=4 format=3 uid="uid://q1fyil32tn1q"]
 
 [ext_resource type="Texture2D" uid="uid://1db1hajgncvj" path="res://ildkule.png" id="1_i88is"]
 [ext_resource type="Script" path="res://ildkule.gd" id="1_uxh02"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gwm7a"]
-radius = 35.0143
+[sub_resource type="CircleShape2D" id="CircleShape2D_5casp"]
+radius = 21.0
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_uxh02")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="Ildkule" type="Sprite2D" parent="Area2D"]
+[node name="Ildkule" type="Sprite2D" parent="."]
 position = Vector2(-0.999996, -1)
 scale = Vector2(0.136667, 0.136667)
 texture = ExtResource("1_i88is")
 
+[node name="Area2D" type="Area2D" parent="."]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-2, -1)
-shape = SubResource("CircleShape2D_gwm7a")
+shape = SubResource("CircleShape2D_5casp")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
