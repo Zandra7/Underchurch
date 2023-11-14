@@ -3,6 +3,9 @@ extends Node2D
 var direction = Vector2.ZERO
 var speed = 500
 
+var isHit = false
+
+
 # Called when the node enters the scene tree for the first time.
 func testinit(dir,pos):
 	position = pos
@@ -16,6 +19,11 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	print(body.name)
-	if body.name != "TopDownGuy":
+	if body.name != "Player1" && body.name != "Player2":
 		queue_free()
+		if body.name.find("ildkule"):
+			isHit = true
+			if isHit == true:
+				Global.hitTimes += 1
+				print(Global.hitTimes)
+				

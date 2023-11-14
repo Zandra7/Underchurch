@@ -1,41 +1,141 @@
-[gd_scene load_steps=6 format=3 uid="uid://6el17cg5k2hv"]
+[gd_scene load_steps=13 format=3 uid="uid://6el17cg5k2hv"]
 
 [ext_resource type="PackedScene" uid="uid://dql6a5rsys0yd" path="res://player_1.tscn" id="1_0d2bf"]
-[ext_resource type="PackedScene" uid="uid://co1jqsa480pu0" path="res://player_2.tscn" id="2_vdqjs"]
-[ext_resource type="PackedScene" uid="uid://cxr8tok5ewmhe" path="res://wall.tscn" id="3_xpw7e"]
-[ext_resource type="PackedScene" path="res://enemy.tscn" id="4_coljf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nf7rb"]
-size = Vector2(305.082, 20)
+[ext_resource type="Script" path="res://main.gd" id="1_0yjsx"]
+[ext_resource type="Texture2D" uid="uid://cvjgy2ot6sj2c" path="res://KirkeVegg.png" id="2_g2ftn"]
+[ext_resource type="Texture2D" uid="uid://tg5udst8721x" path="res://kirkeTak.png" id="2_rge8t"]
+[ext_resource type="PackedScene" uid="uid://c2j7tgddp1br5" path="res://player_2.tscn" id="2_vdqjs"]
+[ext_resource type="PackedScene" uid="uid://cxr8tok5ewmhe" path="res://wall.tscn" id="3_xpw7e"]
+[ext_resource type="PackedScene" uid="uid://2l7ivk5jjm55" path="res://enemy.tscn" id="4_coljf"]
+[ext_resource type="PackedScene" uid="uid://os8kfkh0t71o" path="res://camera.tscn" id="6_c744o"]
+[ext_resource type="Texture2D" uid="uid://bgvhwtgsjcfax" path="res://checkpoint_portal_product.png" id="8_8wljo"]
+[ext_resource type="PackedScene" uid="uid://03n0bcb6icgc" path="res://ghost_timer.tscn" id="9_n4sds"]
+[ext_resource type="PackedScene" uid="uid://co3ru8poafeja" path="res://health.tscn" id="10_01vst"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xw3m6"]
+size = Vector2(932, 20)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_0yjsx")
+
+[node name="KirkeTak" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(1175, -604)
+scale = Vector2(0.57025, 0.57025)
+texture = ExtResource("2_rge8t")
+
+[node name="KirkeVegg" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(-1, 15)
+scale = Vector2(1.11282, 1.11282)
+texture = ExtResource("2_g2ftn")
+
+[node name="KirkeVegg2" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(926.136, 15)
+scale = Vector2(1.11966, 1.11282)
+texture = ExtResource("2_g2ftn")
+
+[node name="NedreVegg1" type="StaticBody2D" parent="."]
+z_index = -10
+position = Vector2(-299, -57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NedreVegg1"]
+position = Vector2(298, 632)
+shape = SubResource("RectangleShape2D_xw3m6")
+
+[node name="KirkeVegg" type="Sprite2D" parent="NedreVegg1"]
+position = Vector2(298, 447)
+scale = Vector2(1.11282, 1.11282)
+texture = ExtResource("2_g2ftn")
+
+[node name="NedreVegg2" type="StaticBody2D" parent="."]
+z_index = -10
+position = Vector2(628, -57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NedreVegg2"]
+position = Vector2(298, 632)
+shape = SubResource("RectangleShape2D_xw3m6")
+
+[node name="KirkeVegg" type="Sprite2D" parent="NedreVegg2"]
+position = Vector2(298, 447)
+scale = Vector2(1.11282, 1.11282)
+texture = ExtResource("2_g2ftn")
+
+[node name="CheckpointPortalProduct" type="Sprite2D" parent="."]
+position = Vector2(-295, 380)
+scale = Vector2(0.518033, 0.518033)
+texture = ExtResource("8_8wljo")
+
+[node name="ColorRect" type="ColorRect" parent="CheckpointPortalProduct"]
+z_index = -1
+offset_left = -200.76
+offset_top = -67.5633
+offset_right = 206.24
+offset_bottom = 310.437
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CheckpointPortalProduct"]
+z_index = -1
+offset_left = -268.323
+offset_top = -27.0253
+offset_right = 138.677
+offset_bottom = 350.975
+rotation = -0.805342
+scale = Vector2(0.979541, 0.971573)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="CheckpointPortalProduct"]
+z_index = -1
+offset_left = -189.0
+offset_top = 339.0
+offset_right = -103.0
+offset_bottom = 751.0
+rotation = -1.63294
+scale = Vector2(0.979541, 0.971573)
+color = Color(0, 0, 0, 1)
 
 [node name="Player1" parent="." instance=ExtResource("1_0d2bf")]
+position = Vector2(-337, 473)
 
 [node name="Player2" parent="." instance=ExtResource("2_vdqjs")]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-324.501, 641)
-scale = Vector2(9.74492, 1.91556)
-shape = SubResource("RectangleShape2D_nf7rb")
-
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
-offset_left = -1788.0
-offset_top = 621.0
-offset_right = -1688.0
-offset_bottom = 661.0
-scale = Vector2(29.4213, 1)
-color = Color(1, 1, 0.768627, 1)
+position = Vector2(-242, 485)
 
 [node name="Wall" parent="." instance=ExtResource("3_xpw7e")]
+position = Vector2(2052, -539)
 
 [node name="Wall2" parent="." instance=ExtResource("3_xpw7e")]
-position = Vector2(107, -503)
+position = Vector2(168, -540)
 
 [node name="Wall3" parent="." instance=ExtResource("3_xpw7e")]
-position = Vector2(1527, -845)
+position = Vector2(1806, -841)
 
 [node name="Enemy" parent="." instance=ExtResource("4_coljf")]
-position = Vector2(-491, 567)
+position = Vector2(678, 476)
+
+[node name="Camera2D" parent="." instance=ExtResource("6_c744o")]
+position = Vector2(300, 299)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="health" parent="CanvasLayer" instance=ExtResource("10_01vst")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = -97.0
+offset_right = 34.0
+offset_bottom = -97.0
+grow_vertical = 0
+
+[node name="GhostTimer" parent="CanvasLayer" instance=ExtResource("9_n4sds")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = -110.0
+offset_top = 59.0
+offset_right = -110.0
+offset_bottom = 59.0
+grow_horizontal = 0
+grow_vertical = 0

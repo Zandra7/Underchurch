@@ -1,24 +1,68 @@
-[gd_scene load_steps=3 format=3 uid="uid://co1jqsa480pu0"]
+[gd_scene load_steps=12 format=3 uid="uid://c2j7tgddp1br5"]
 
 [ext_resource type="Script" path="res://Player2.gd" id="1_byj5w"]
+[ext_resource type="Texture2D" path="res://prest_front2.png" id="2_4h738"]
+[ext_resource type="Texture2D" path="res://prest_front1.png" id="3_8grxb"]
+[ext_resource type="Texture2D" path="res://prest_walk.png" id="4_y7i2x"]
+[ext_resource type="Texture2D" path="res://prest_side.png" id="5_lw2kj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xa5ok"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg3k2"]
+atlas = ExtResource("2_4h738")
+region = Rect2(0, 0, 353, 571)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6mku"]
+atlas = ExtResource("3_8grxb")
+region = Rect2(0, 0, 372, 578)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8lnq"]
+atlas = ExtResource("4_y7i2x")
+region = Rect2(0, 0, 353, 569)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3gur"]
+atlas = ExtResource("5_lw2kj")
+region = Rect2(0, 0, 353, 578)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7w5ub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg3k2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6mku")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8lnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3gur")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ylpo2"]
+radius = 5.4
 
 [node name="Player2" type="CharacterBody2D"]
 position = Vector2(315, 98)
 scale = Vector2(5, 5)
 script = ExtResource("1_byj5w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_xa5ok")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0566572, 0.0566572)
+sprite_frames = SubResource("SpriteFrames_7w5ub")
+animation = &"walk"
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = -9.99999
-offset_top = -10.0
-offset_right = 30.0
-offset_bottom = 30.0
-scale = Vector2(0.498125, 0.497414)
-color = Color(0.701961, 1, 1, 0.721569)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.599998, 0)
+shape = SubResource("CapsuleShape2D_ylpo2")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

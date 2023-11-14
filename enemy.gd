@@ -21,13 +21,24 @@ func _physics_process(delta):
 		position.x += (Player1.position.x - position.x) / SPEED
 
 	move_and_slide()
+	
+	if Global.hitTimes >= 3:
+		queue_free()
 
+# Enter enemy detection range
 func _on_area_2d_body_entered(body):
 		Player1 = body
 		Player2 = body
 		Player1_chase = true
 		Player2_chase = true
 
+# Exit enemy detection range
 func _on_area_2d_body_exited(body):
 	Player1_chase = false
 	Player2_chase = false
+
+# Damage area
+func _on_area_2d_2_body_entered(body):
+	if body.name == "Player1":
+		Global.health -= 1
+

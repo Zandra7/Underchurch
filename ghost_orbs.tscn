@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://byto6rhcswh8r"]
+
+[ext_resource type="Texture2D" path="res://orbs_product.png" id="1_5uwo6"]
+[ext_resource type="Script" path="res://orbs.gd" id="1_dtoxq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rbu7k"]
+radius = 50.0
+height = 132.0
+
+[node name="ghost_orbs" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.800002, 0.800002)
+script = ExtResource("1_dtoxq")
+
+[node name="OrbsProduct" type="Sprite2D" parent="Area2D"]
+position = Vector2(61, 70)
+scale = Vector2(0.196141, 0.196141)
+texture = ExtResource("1_5uwo6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(71, 63)
+shape = SubResource("CapsuleShape2D_rbu7k")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

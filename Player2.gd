@@ -17,8 +17,7 @@ var fireballReady = true
 var direction = Vector2.ZERO
 
 func _ready():
-	pass
-#	anim = $AnimatedSprite2D
+	anim = $AnimatedSprite2D
 	timer = $Timer
 
 func _physics_process(delta):
@@ -32,10 +31,15 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Vector2.ZERO
 	direction = Vector2(Input.get_axis("p2left", "p2right"), 0)
 	if direction:
 		velocity.x = direction.x * SPEED
+		if Input.is_action_just_pressed("p2left"):
+			anim.flip_h = true
+			anim.play("walk")
+		elif Input.is_action_just_pressed("p2right"):
+			anim.flip_h = false
+			anim.play("walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
@@ -51,6 +55,9 @@ func _physics_process(delta):
 		#$AudioStreamPlayer2D.play()
 		fireballReady = false
 		timer.start()
+
+	if is_on_floor() and !direction:
+		anim.play("idle")
 
 	move_and_slide()
 
