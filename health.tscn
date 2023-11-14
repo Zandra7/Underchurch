@@ -3,29 +3,31 @@
 [ext_resource type="Texture2D" uid="uid://dgkcj2ojhtt0k" path="res://Heart_corazón.svg.png" id="1_31ex4"]
 [ext_resource type="Script" path="res://health.gd" id="1_47mdj"]
 
-[node name="health" type="Node2D"]
-
-[node name="Control" type="Control" parent="."]
+[node name="Health" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(2.04, 2.04)
 script = ExtResource("1_47mdj")
 
-[node name="Heart1" type="TextureRect" parent="Control"]
+[node name="Heart1" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 800.0
 offset_bottom = 800.0
 scale = Vector2(0.039998, 0.039998)
 texture = ExtResource("1_31ex4")
 
-[node name="Heart2" type="TextureRect" parent="Control"]
+[node name="Heart2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 36.0
 offset_right = 836.0
 offset_bottom = 800.0
 scale = Vector2(0.039998, 0.039998)
 texture = ExtResource("1_31ex4")
 
-[node name="Heart3" type="TextureRect" parent="Control"]
+[node name="Heart3" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 72.0
 offset_right = 872.0
 offset_bottom = 800.0
