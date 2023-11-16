@@ -1,17 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://6el17cg5k2hv"]
+[gd_scene load_steps=16 format=3 uid="uid://6el17cg5k2hv"]
 
 [ext_resource type="PackedScene" uid="uid://dql6a5rsys0yd" path="res://player_1.tscn" id="1_0d2bf"]
-
 [ext_resource type="Script" path="res://main.gd" id="1_0yjsx"]
 [ext_resource type="Texture2D" uid="uid://cvjgy2ot6sj2c" path="res://KirkeVegg.png" id="2_g2ftn"]
 [ext_resource type="Texture2D" uid="uid://tg5udst8721x" path="res://kirkeTak.png" id="2_rge8t"]
-[ext_resource type="PackedScene" uid="uid://c2j7tgddp1br5" path="res://player_2.tscn" id="2_vdqjs"]
+[ext_resource type="PackedScene" uid="uid://co1jqsa480pu0" path="res://player_2.tscn" id="2_vdqjs"]
 [ext_resource type="PackedScene" uid="uid://cxr8tok5ewmhe" path="res://wall.tscn" id="3_xpw7e"]
 [ext_resource type="PackedScene" uid="uid://2l7ivk5jjm55" path="res://enemy.tscn" id="4_coljf"]
-[ext_resource type="PackedScene" uid="uid://os8kfkh0t71o" path="res://camera.tscn" id="6_c744o"]
+[ext_resource type="AudioStream" uid="uid://ybp13la1vklw" path="res://SFX/Walkin sfx.mp3" id="6_7x4ob"]
+[ext_resource type="PackedScene" path="res://camera.tscn" id="6_c744o"]
+[ext_resource type="AudioStream" uid="uid://dvynm58rh2h86" path="res://SFX/Sprit Sfx.mp3" id="8_4nxm5"]
 [ext_resource type="Texture2D" uid="uid://bgvhwtgsjcfax" path="res://checkpoint_portal_product.png" id="8_8wljo"]
-[ext_resource type="PackedScene" uid="uid://03n0bcb6icgc" path="res://ghost_timer.tscn" id="9_n4sds"]
-[ext_resource type="PackedScene" uid="uid://co3ru8poafeja" path="res://health.tscn" id="10_01vst"]
+[ext_resource type="PackedScene" path="res://ghost_timer.tscn" id="9_n4sds"]
+[ext_resource type="PackedScene" path="res://health.tscn" id="10_01vst"]
+[ext_resource type="Texture2D" uid="uid://dhplhm3frv4y2" path="res://2212.w015.n003.1098A.p30.1098.jpg" id="14_7s055"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw3m6"]
 size = Vector2(932, 20)
@@ -99,8 +101,16 @@ color = Color(0, 0, 0, 1)
 [node name="Player1" parent="." instance=ExtResource("1_0d2bf")]
 position = Vector2(-337, 473)
 
+[node name="Walk" type="AudioStreamPlayer2D" parent="Player1"]
+stream = ExtResource("6_7x4ob")
+volume_db = 10.0
+
 [node name="Player2" parent="." instance=ExtResource("2_vdqjs")]
 position = Vector2(-242, 485)
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="Player2"]
+stream = ExtResource("8_4nxm5")
+volume_db = 10.0
 
 [node name="Wall" parent="." instance=ExtResource("3_xpw7e")]
 position = Vector2(2052, -539)
@@ -139,3 +149,31 @@ offset_right = -110.0
 offset_bottom = 59.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[node name="2212_w015_n003_1098a_p30_1098" type="Sprite2D" parent="."]
+z_index = -999
+position = Vector2(-726, 305)
+scale = Vector2(0.525648, 0.653518)
+texture = ExtResource("14_7s055")
+
+[node name="2212_w015_n003_1098a_p30_1099" type="Sprite2D" parent="."]
+z_index = -999
+position = Vector2(2428, 305)
+scale = Vector2(0.525648, 0.653518)
+texture = ExtResource("14_7s055")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+offset_left = -10.0
+offset_top = -217.0
+offset_right = 10.0
+offset_bottom = 536.0
+color = Color(0.345098, 0.345098, 0.352941, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = -2
+offset_left = 915.0
+offset_top = -217.0
+offset_right = 935.0
+offset_bottom = 536.0
+color = Color(0.345098, 0.345098, 0.352941, 1)
