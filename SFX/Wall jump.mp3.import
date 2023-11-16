@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0dxcugfh7nbo"
+path="res://.godot/imported/Wall jump.mp3-afd5f8356b06c5a0700feee5519cdf12.mp3str"
+
+[deps]
+
+source_file="res://SFX/Wall jump.mp3"
+dest_files=["res://.godot/imported/Wall jump.mp3-afd5f8356b06c5a0700feee5519cdf12.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

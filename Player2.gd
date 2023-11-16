@@ -9,6 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var speed = 200
 var anim
+var walk
 var fireballTscn = preload("res://ildkule.tscn")
 var fireballInstance
 var previousDirection = Vector2(1,0)
@@ -19,6 +20,7 @@ var direction = Vector2.ZERO
 func _ready():
 	anim = $AnimatedSprite2D
 	timer = $Timer
+	walk = $Walk
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -37,9 +39,11 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("p2left"):
 			anim.flip_h = true
 			anim.play("walk")
+			walk.play()
 		elif Input.is_action_just_pressed("p2right"):
 			anim.flip_h = false
 			anim.play("walk")
+			walk.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
@@ -58,6 +62,7 @@ func _physics_process(delta):
 
 	if is_on_floor() and !direction:
 		anim.play("idle")
+		walk.stop()
 
 	move_and_slide()
 

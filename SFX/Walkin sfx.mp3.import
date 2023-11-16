@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ybp13la1vklw"
+path="res://.godot/imported/Walkin sfx.mp3-18c705143fdfb2b72c095a4cb7db4e3a.mp3str"
+
+[deps]
+
+source_file="res://SFX/Walkin sfx.mp3"
+dest_files=["res://.godot/imported/Walkin sfx.mp3-18c705143fdfb2b72c095a4cb7db4e3a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

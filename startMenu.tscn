@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://by0b004tim4pp"]
+[gd_scene load_steps=14 format=3 uid="uid://glg3yx5rytd3"]
 
 [ext_resource type="Script" path="res://StartButton.gd" id="1_1liyt"]
-[ext_resource type="Texture2D" path="res://kirke_ext.png" id="1_avnxy"]
+[ext_resource type="Texture2D" uid="uid://bw1bpavswar44" path="res://kirke_ext.png" id="1_avnxy"]
 [ext_resource type="Script" path="res://QuitButton.gd" id="2_mlpol"]
 [ext_resource type="FontFile" uid="uid://cipfm0g6dvp0a" path="res://masonsans.ttf" id="2_nt25h"]
-
-[ext_resource type="Texture2D" path="res://thing.png" id="3_hxjbi"]
+[ext_resource type="Texture2D" uid="uid://bbvymxn7kg2ne" path="res://thing.png" id="3_hxjbi"]
 [ext_resource type="AudioStream" uid="uid://cqik0rkltci0b" path="res://Title Screen OST.mp3" id="4_7vehs"]
 
 [sub_resource type="Theme" id="Theme_hvste"]
