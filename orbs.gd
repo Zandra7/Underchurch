@@ -12,5 +12,5 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	queue_free()
 	Global.timerValue = Global.timerValue + 10
+	queue_free()

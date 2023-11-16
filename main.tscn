@@ -1,9 +1,20 @@
-[gd_scene load_steps=16 format=3 uid="uid://6el17cg5k2hv"]
+[gd_scene load_steps=18 format=3 uid="uid://6el17cg5k2hv"]
 
 [ext_resource type="PackedScene" uid="uid://dql6a5rsys0yd" path="res://player_1.tscn" id="1_0d2bf"]
 [ext_resource type="Script" path="res://main.gd" id="1_0yjsx"]
 [ext_resource type="Texture2D" uid="uid://cvjgy2ot6sj2c" path="res://KirkeVegg.png" id="2_g2ftn"]
+[ext_resource type="FontFile" uid="uid://cipfm0g6dvp0a" path="res://masonsans.ttf" id="2_ntgoy"]
 [ext_resource type="Texture2D" uid="uid://tg5udst8721x" path="res://kirkeTak.png" id="2_rge8t"]
+[ext_resource type="PackedScene" uid="uid://c2j7tgddp1br5" path="res://player_2.tscn" id="2_vdqjs"]
+[ext_resource type="Texture2D" path="res://Kirketak-v3.png" id="3_sympj"]
+[ext_resource type="PackedScene" uid="uid://cxr8tok5ewmhe" path="res://wall.tscn" id="3_xpw7e"]
+[ext_resource type="PackedScene" uid="uid://2l7ivk5jjm55" path="res://enemy.tscn" id="4_coljf"]
+[ext_resource type="PackedScene" uid="uid://os8kfkh0t71o" path="res://camera.tscn" id="6_c744o"]
+[ext_resource type="Script" path="res://PortalExit.gd" id="7_w2hnh"]
+[ext_resource type="Texture2D" uid="uid://bgvhwtgsjcfax" path="res://checkpoint_portal_product.png" id="8_8wljo"]
+[ext_resource type="PackedScene" uid="uid://03n0bcb6icgc" path="res://ghost_timer.tscn" id="9_n4sds"]
+[ext_resource type="PackedScene" uid="uid://co3ru8poafeja" path="res://health.tscn" id="10_01vst"]
+[ext_resource type="PackedScene" uid="uid://byto6rhcswh8r" path="res://ghost_orbs.tscn" id="11_vmb0y"]
 [ext_resource type="PackedScene" uid="uid://co1jqsa480pu0" path="res://player_2.tscn" id="2_vdqjs"]
 [ext_resource type="PackedScene" uid="uid://cxr8tok5ewmhe" path="res://wall.tscn" id="3_xpw7e"]
 [ext_resource type="PackedScene" uid="uid://2l7ivk5jjm55" path="res://enemy.tscn" id="4_coljf"]
@@ -18,26 +29,87 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw3m6"]
 size = Vector2(932, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nf7rb"]
+size = Vector2(120.986, 20)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0yjsx")
 
+[node name="tutorial" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="tutorial"]
+layout_mode = 0
+offset_left = -412.0
+offset_top = 644.0
+offset_right = -51.0
+offset_bottom = 691.0
+theme_override_fonts/font = ExtResource("2_ntgoy")
+theme_override_font_sizes/font_size = 20
+text = "Player 1: Use A, D to move and W to jump.
+Player 2: Use ←, → to move and ↑ to jump.
+"
+
+[node name="Label2" type="Label" parent="tutorial"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 257.0
+offset_right = 505.0
+offset_bottom = 329.0
+theme_override_fonts/font = ExtResource("2_ntgoy")
+theme_override_font_sizes/font_size = 20
+text = "Player 1 will take damage when in contact with an enemy.
+
+Player 2 can kill enemies with a firebolt. 
+Press M to shoot.
+"
+
+[node name="Label3" type="Label" parent="tutorial"]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 317.0
+offset_right = 1402.0
+offset_bottom = 335.0
+theme_override_fonts/font = ExtResource("2_ntgoy")
+theme_override_font_sizes/font_size = 20
+text = "Player 2 requires ghost orbs to stay alive. Pick it up."
+
+[node name="Label4" type="Label" parent="tutorial"]
+layout_mode = 0
+offset_left = 1511.0
+offset_top = 643.0
+offset_right = 1953.0
+offset_bottom = 679.0
+theme_override_fonts/font = ExtResource("2_ntgoy")
+theme_override_font_sizes/font_size = 20
+text = "Player 1 can wall jump. Press W while on a wall.
+Player 2 is a little shorter. Walk forward.
+"
+
+[node name="Label5" type="Label" parent="tutorial"]
+layout_mode = 0
+offset_left = 2390.0
+offset_top = 303.0
+offset_right = 2834.0
+offset_bottom = 321.0
+theme_override_fonts/font = ExtResource("2_ntgoy")
+theme_override_font_sizes/font_size = 20
+text = "Both players have to go into the portal to continiue"
+
+[node name="Kirketak-v3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1728, -222)
+scale = Vector2(0.673333, 0.643333)
+texture = ExtResource("3_sympj")
+
 [node name="KirkeTak" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(1175, -604)
-scale = Vector2(0.57025, 0.57025)
+position = Vector2(1850, -211)
+scale = Vector2(0.571104, 0.57025)
 texture = ExtResource("2_rge8t")
-
-[node name="KirkeVegg" type="Sprite2D" parent="."]
-z_index = -10
-position = Vector2(-1, 15)
-scale = Vector2(1.11282, 1.11282)
-texture = ExtResource("2_g2ftn")
-
-[node name="KirkeVegg2" type="Sprite2D" parent="."]
-z_index = -10
-position = Vector2(926.136, 15)
-scale = Vector2(1.11966, 1.11282)
-texture = ExtResource("2_g2ftn")
 
 [node name="NedreVegg1" type="StaticBody2D" parent="."]
 z_index = -10
@@ -65,8 +137,34 @@ position = Vector2(298, 447)
 scale = Vector2(1.11282, 1.11282)
 texture = ExtResource("2_g2ftn")
 
+[node name="NedreVegg3" type="StaticBody2D" parent="."]
+z_index = -10
+position = Vector2(1554, -57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NedreVegg3"]
+position = Vector2(298, 632)
+shape = SubResource("RectangleShape2D_xw3m6")
+
+[node name="KirkeVegg" type="Sprite2D" parent="NedreVegg3"]
+position = Vector2(298, 447)
+scale = Vector2(1.11282, 1.11282)
+texture = ExtResource("2_g2ftn")
+
+[node name="NedreVegg4" type="StaticBody2D" parent="."]
+z_index = -10
+position = Vector2(2423, -57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NedreVegg4"]
+position = Vector2(298, 632)
+shape = SubResource("RectangleShape2D_xw3m6")
+
+[node name="KirkeVegg" type="Sprite2D" parent="NedreVegg4"]
+position = Vector2(298, 447)
+scale = Vector2(1.11282, 1.11282)
+texture = ExtResource("2_g2ftn")
+
 [node name="CheckpointPortalProduct" type="Sprite2D" parent="."]
-position = Vector2(-295, 380)
+position = Vector2(-228, 379.902)
 scale = Vector2(0.518033, 0.518033)
 texture = ExtResource("8_8wljo")
 
@@ -98,34 +196,125 @@ rotation = -1.63294
 scale = Vector2(0.979541, 0.971573)
 color = Color(0, 0, 0, 1)
 
+[node name="PortalExit" type="Area2D" parent="."]
+position = Vector2(2967, 389)
+rotation = 0.0640908
+scale = Vector2(0.518033, 0.518033)
+script = ExtResource("7_w2hnh")
+
+[node name="CheckpointPortalProduct2" type="Sprite2D" parent="PortalExit"]
+scale = Vector2(1, 1)
+texture = ExtResource("8_8wljo")
+
+[node name="ColorRect" type="ColorRect" parent="PortalExit/CheckpointPortalProduct2"]
+z_index = -1
+offset_left = -200.76
+offset_top = -67.5633
+offset_right = 206.24
+offset_bottom = 310.437
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="PortalExit/CheckpointPortalProduct2"]
+z_index = -1
+offset_left = -268.323
+offset_top = -27.0253
+offset_right = 138.677
+offset_bottom = 350.975
+rotation = -0.805342
+scale = Vector2(0.979541, 0.971573)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="PortalExit/CheckpointPortalProduct2"]
+z_index = -1
+offset_left = -189.0
+offset_top = 339.0
+offset_right = -103.0
+offset_bottom = 751.0
+rotation = -1.63294
+scale = Vector2(0.979541, 0.971573)
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PortalExit"]
+polygon = PackedVector2Array(-85.0591, 332.364, -121.025, -77.3441, 36.8057, -240.287, 189.726, -27.6511, 196.197, 314.314)
+
 [node name="Player1" parent="." instance=ExtResource("1_0d2bf")]
-position = Vector2(-337, 473)
+position = Vector2(-270, 472.902)
 
 [node name="Walk" type="AudioStreamPlayer2D" parent="Player1"]
 stream = ExtResource("6_7x4ob")
 volume_db = 10.0
 
 [node name="Player2" parent="." instance=ExtResource("2_vdqjs")]
-position = Vector2(-242, 485)
+position = Vector2(-175, 484.902)
 
 [node name="Walk" type="AudioStreamPlayer2D" parent="Player2"]
 stream = ExtResource("8_4nxm5")
 volume_db = 10.0
 
 [node name="Wall" parent="." instance=ExtResource("3_xpw7e")]
-position = Vector2(2052, -539)
+position = Vector2(2330, -43)
+scale = Vector2(0.389389, 0.747015)
 
 [node name="Wall2" parent="." instance=ExtResource("3_xpw7e")]
-position = Vector2(168, -540)
+position = Vector2(175, 162)
+scale = Vector2(0.394758, 1.00107)
+
+[node name="Wall5" parent="." instance=ExtResource("3_xpw7e")]
+position = Vector2(3843, 162)
+scale = Vector2(0.394758, 1.00107)
 
 [node name="Wall3" parent="." instance=ExtResource("3_xpw7e")]
-position = Vector2(1806, -841)
+position = Vector2(2265, -209)
+scale = Vector2(0.469083, 1.00798)
+
+[node name="Wall4" parent="." instance=ExtResource("3_xpw7e")]
+position = Vector2(2727, -209)
+scale = Vector2(0.469083, 1.00798)
+
+[node name="roof" type="StaticBody2D" parent="."]
+position = Vector2(1718, -106)
+rotation = 2.12504
+scale = Vector2(-0.435256, 0.24194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roof"]
+position = Vector2(576.502, 641)
+scale = Vector2(9.74492, 1.91556)
+shape = SubResource("RectangleShape2D_nf7rb")
+
+[node name="ColorRect" type="ColorRect" parent="roof"]
+offset_left = -14.0
+offset_top = 621.0
+offset_right = 26.0
+offset_bottom = 661.0
+scale = Vector2(29.4213, 1)
+color = Color(0.345098, 0.345098, 0.352941, 1)
+
+[node name="roof2" type="StaticBody2D" parent="."]
+position = Vector2(1720, -531)
+rotation = 4.15894
+scale = Vector2(-0.435256, 0.24194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roof2"]
+position = Vector2(576.502, 641)
+scale = Vector2(9.74492, 1.91556)
+shape = SubResource("RectangleShape2D_nf7rb")
+
+[node name="ColorRect" type="ColorRect" parent="roof2"]
+offset_left = -14.0
+offset_top = 621.0
+offset_right = 26.0
+offset_bottom = 661.0
+scale = Vector2(29.4213, 1)
+color = Color(0.345098, 0.345098, 0.352941, 1)
 
 [node name="Enemy" parent="." instance=ExtResource("4_coljf")]
-position = Vector2(678, 476)
+position = Vector2(681, 476)
 
 [node name="Camera2D" parent="." instance=ExtResource("6_c744o")]
 position = Vector2(300, 299)
+
+[node name="ghost_orbs" parent="." instance=ExtResource("11_vmb0y")]
+position = Vector2(1118, 437)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -150,6 +339,7 @@ offset_bottom = 59.0
 grow_horizontal = 0
 grow_vertical = 0
 
+[connection signal="body_entered" from="PortalExit" to="PortalExit" method="_on_body_entered"]
 [node name="2212_w015_n003_1098a_p30_1098" type="Sprite2D" parent="."]
 z_index = -999
 position = Vector2(-726, 305)

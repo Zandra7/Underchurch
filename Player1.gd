@@ -27,6 +27,8 @@ func _physics_process(delta):
 	if $RayCastRight.is_colliding():
 		if $RayCastRight.get_collider().name.find("wall"):
 			whichWall = "right"
+		else: 
+			pass
 			
 	# Collide with left wall
 	elif $RayCastLeft.is_colliding():
