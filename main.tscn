@@ -91,14 +91,9 @@ theme_override_fonts/font = ExtResource("2_ntgoy")
 theme_override_font_sizes/font_size = 20
 text = "Both players have to go into the portal to continiue"
 
-[node name="Kirketak-v3" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1728, -222)
-scale = Vector2(0.673333, 0.643333)
-
 [node name="KirkeTak" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(1850, -211)
+position = Vector2(1849, -245)
 scale = Vector2(0.571104, 0.57025)
 texture = ExtResource("2_rge8t")
 
@@ -254,15 +249,15 @@ position = Vector2(3843, 162)
 scale = Vector2(0.394758, 1.00107)
 
 [node name="Wall3" parent="." instance=ExtResource("3_xpw7e")]
-position = Vector2(2265, -209)
+position = Vector2(2265, -248)
 scale = Vector2(0.469083, 1.00798)
 
 [node name="Wall4" parent="." instance=ExtResource("3_xpw7e")]
-position = Vector2(2727, -209)
+position = Vector2(2727, -248)
 scale = Vector2(0.469083, 1.00798)
 
 [node name="roof" type="StaticBody2D" parent="."]
-position = Vector2(1718, -106)
+position = Vector2(1718, -148)
 rotation = 2.12504
 scale = Vector2(-0.435256, 0.24194)
 
@@ -278,9 +273,10 @@ offset_right = 26.0
 offset_bottom = 661.0
 scale = Vector2(29.4213, 1)
 color = Color(0.345098, 0.345098, 0.352941, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="roof2" type="StaticBody2D" parent="."]
-position = Vector2(1720, -531)
+position = Vector2(1720, -573)
 rotation = 4.15894
 scale = Vector2(-0.435256, 0.24194)
 
