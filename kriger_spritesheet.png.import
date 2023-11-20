@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ihtv0tho00vc"
-path="res://.godot/imported/kriger_walk.png-9eab33d5c6cfd6d7f012a264766f1557.ctex"
+uid="uid://cte5iqp28g1l2"
+path="res://.godot/imported/kriger_spritesheet.png-184c2f6a260236377979ebc602c39189.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://kriger_walk.png"
-dest_files=["res://.godot/imported/kriger_walk.png-9eab33d5c6cfd6d7f012a264766f1557.ctex"]
+source_file="res://kriger_spritesheet.png"
+dest_files=["res://.godot/imported/kriger_spritesheet.png-184c2f6a260236377979ebc602c39189.ctex"]
 
 [params]
 
