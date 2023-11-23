@@ -1,39 +1,33 @@
-[gd_scene load_steps=13 format=3 uid="uid://dql6a5rsys0yd"]
+[gd_scene load_steps=10 format=3 uid="uid://dql6a5rsys0yd"]
 
 [ext_resource type="Script" path="res://Player1.gd" id="1_ykjrc"]
-[ext_resource type="Texture2D" uid="uid://pit8svx88i4p" path="res://kriger_front.png" id="2_ga5y7"]
-[ext_resource type="Texture2D" uid="uid://ccywo6ipamfix" path="res://kriger_jump.png" id="3_3e085"]
-[ext_resource type="Texture2D" uid="uid://ihtv0tho00vc" path="res://kriger_walk.png" id="3_qtpaq"]
+[ext_resource type="Texture2D" uid="uid://cte5iqp28g1l2" path="res://kriger_spritesheet.png" id="3_vw4cx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pnhio"]
-atlas = ExtResource("2_ga5y7")
-region = Rect2(0, 0, 317, 590)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv2wf"]
+atlas = ExtResource("3_vw4cx")
+region = Rect2(0, 0, 312, 590)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_416qo"]
-atlas = ExtResource("3_3e085")
-region = Rect2(310, 0, 310, 590)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqsae"]
+atlas = ExtResource("3_vw4cx")
+region = Rect2(1872, 0, 312, 590)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wtdlm"]
-atlas = ExtResource("3_3e085")
-region = Rect2(0, 0, 310, 590)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dje0"]
+atlas = ExtResource("3_vw4cx")
+region = Rect2(624, 0, 312, 590)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mi1fd"]
-atlas = ExtResource("3_3e085")
-region = Rect2(310, 0, 310, 590)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v44d"]
+atlas = ExtResource("3_vw4cx")
+region = Rect2(936, 0, 312, 590)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1apva"]
-atlas = ExtResource("3_qtpaq")
-region = Rect2(315, 0, 315, 590)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hfqc8"]
-atlas = ExtResource("3_qtpaq")
-region = Rect2(0, 0, 315, 590)
+[sub_resource type="AtlasTexture" id="AtlasTexture_looj6"]
+atlas = ExtResource("3_vw4cx")
+region = Rect2(1248, 0, 312, 590)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rf50i"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pnhio")
+"texture": SubResource("AtlasTexture_mv2wf")
 }],
 "loop": true,
 "name": &"idle",
@@ -41,33 +35,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_416qo")
-}],
-"loop": false,
-"name": &"jump",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wtdlm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mi1fd")
+"texture": SubResource("AtlasTexture_yqsae")
 }],
 "loop": true,
-"name": &"jumpmaybe",
-"speed": 2.0
+"name": &"jump",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1apva")
+"texture": SubResource("AtlasTexture_8dje0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hfqc8")
+"texture": SubResource("AtlasTexture_6v44d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_looj6")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 3.0
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_afwe7"]
