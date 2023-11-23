@@ -23,4 +23,4 @@ func _on_body_entered(body):
 
 	if player1InArea and player2InArea:
 		print("Du vant!")
-		get_tree().change_scene_to_file("res://Du_Vant")
+		get_tree().change_scene_to_file("res://Du_Vant.tscn")
