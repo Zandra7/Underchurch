@@ -16,13 +16,11 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	print(body.name)
 	if body.name == "Player1":
 		player1InArea = true
-		print("p1 in area ", player1InArea)
 	elif body.name == "Player2":
 		player2InArea = true
-		print("p2 in area ", player2InArea)
 
 	if player1InArea and player2InArea:
-		pass # Noe som skal skje når man vinner
+		print("Du vant!")
+		get_tree().change_scene_to_file("res://Du_Vant")
